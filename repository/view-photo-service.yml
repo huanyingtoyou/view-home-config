@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: view-photo-service
+management:
+  security:
+    enabled: false
