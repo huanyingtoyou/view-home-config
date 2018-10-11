@@ -1,0 +1,6 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://lihy:520@localhost:8088/eureka/
+  instance:
+    status-page-url: http://localhost:${server.port}/swagger-ui.html
