@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: view-user-service
+management:
+  security:
+    enabled: false
