@@ -11,4 +11,3 @@ spring:
 # mybatis mapper xml 配置
 mybatis:
   mapper-locations: classpath:mybatis/**/*.xml
-profile: lihy111
