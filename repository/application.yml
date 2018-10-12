@@ -6,3 +6,10 @@ eureka:
     status-page-url: http://localhost:${server.port}/swagger-ui.html
 
 profile: lihy111222
+
+spring:
+  rabbitmq:
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
