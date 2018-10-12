@@ -5,7 +5,7 @@ eureka:
   instance:
     status-page-url: http://localhost:${server.port}/swagger-ui.html
 
-profile: lihy111222
+profile: lihy
 
 spring:
   rabbitmq:
