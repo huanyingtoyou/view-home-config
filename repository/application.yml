@@ -5,11 +5,12 @@ eureka:
   instance:
     status-page-url: http://localhost:${server.port}/swagger-ui.html
 
+#测试自动刷新的配置属性
 profile: lihy
-
+#rabbitmq配置
 spring:
   rabbitmq:
-        host: localhost
-        port: 5672
-        username: guest
-        password: guest
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
