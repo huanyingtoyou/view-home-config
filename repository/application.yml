@@ -14,3 +14,8 @@ spring:
     port: 5672
     username: guest
     password: guest
+
+#feign远程调用配置开启熔断
+feign:
+  hystrix:
+    enabled: true
