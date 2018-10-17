@@ -38,12 +38,3 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 600000
-ribbon:
-  eureka:
-    enabled: true
-
-#zuul的路由配置
-zuul:
-  routes:
-    serviceId: view-user-service
-    path: /user-service/**
