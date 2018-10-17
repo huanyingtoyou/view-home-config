@@ -38,6 +38,9 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 600000
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
 
 #zuul的路由配置
 zuul:
