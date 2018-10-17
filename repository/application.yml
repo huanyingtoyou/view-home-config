@@ -26,3 +26,20 @@ spring:
 feign:
   hystrix:
     enabled: true
+#hystrix熔断机制
+hystrix:
+  shareSecurityContext: true
+  command:
+    default:
+      circuitBreaker:
+        sleepWindowInMilliseconds: 100000
+        forceClosed: true
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 600000
+
+#zuul的路由配置
+zuul:
+  routes:
+    view-user-service: /user-service/**
