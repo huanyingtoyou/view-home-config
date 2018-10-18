@@ -1,5 +1,5 @@
 turbine:
   aggregator:
     clusterConfig: default
-  appConfig: view-user-service,view-photo-service
+  appConfig: view-view,view-photo-service
   clusterNameExpression: new String("default")
