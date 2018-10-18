@@ -4,6 +4,7 @@ eureka:
       defaultZone: http://lihy:520@localhost:8088/eureka/
   instance:
     status-page-url: http://localhost:${server.port}/swagger-ui.html
+    #prefer-ip-address: true
 
 #测试自动刷新的配置属性
 profile: lihy
