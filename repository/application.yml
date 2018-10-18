@@ -10,6 +10,12 @@ eureka:
 profile: lihy
 
 spring:
+  #rabbitmq配置
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   #zipkin服务地址及采样比例
   zipkin:
     base-url: http://localhost:8000
