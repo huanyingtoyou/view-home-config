@@ -3,4 +3,3 @@ turbine:
     clusterConfig: default
   appConfig: view-user-service,view-photo-service
   clusterNameExpression: new String("default")
-  instanceUrlSuffix: /*/hystrix.stream
