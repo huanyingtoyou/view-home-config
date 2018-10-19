@@ -48,4 +48,4 @@ logging:
     root: INFO
     com.lihy.view.user.controller: WARN
     com.lihy.view.user.mapper: DEBUG
-  file: logs/spring-cloud-logging.log
+  #file: logs/spring-cloud-logging.log
