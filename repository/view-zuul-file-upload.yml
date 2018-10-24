@@ -1,0 +1,7 @@
+spring:
+  http:
+    multipart:
+      #Max file size，默认1M
+      max-file-size: 2000Mb
+      #Max request size，默认10M
+      max-request-size: 2500Mb
