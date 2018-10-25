@@ -31,3 +31,7 @@ tables:
       inline:
         shardingColumn: order_id
         algorithmInlineExpression: t_order_item${order_id % 2}
+
+# mybatis mapper xml 配置
+mybatis:
+  mapper-locations: classpath:mybatis/**/*.xml
