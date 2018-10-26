@@ -1,36 +1,40 @@
-dataSources:
-  ds0: !!com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ds_0
-    username: root
-    password:
-  ds1: !!com.alibaba.druid.pool.DruidDataSource
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ds_1
-    username: root
-    password:
-
-tables:
-  t_order:
-    actualDataNodes: ds${0..1}.t_order${0..1}
-    databaseStrategy:
-      inline:
-        shardingColumn: user_id
-        algorithmInlineExpression: ds${user_id % 2}
-    tableStrategy:
-      inline:
-        shardingColumn: order_id
-        algorithmInlineExpression: t_order${order_id % 2}
-  t_order_item:
-    actualDataNodes: ds${0..1}.t_order_item${0..1}
-    databaseStrategy:
-      inline:
-        shardingColumn: user_id
-        algorithmInlineExpression: ds${user_id % 2}
-    tableStrategy:
-      inline:
-        shardingColumn: order_id
-        algorithmInlineExpression: t_order_item${order_id % 2}
+sharding:
+  jdbc:
+    datasource:
+      names: ds_0,ds_1
+      ds_0:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/ds_0
+        username: root
+        password:
+      ds_1:
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/ds_1
+        username: root
+        password:
+    config:
+      sharding:
+        default-database-strategy:
+          inline:
+            sharding-column: user_id
+            algorithm-expression: ds_$->{user_id % 2}
+        tables:
+          t_order:
+            actual-data-nodes: ds_$->{0..1}.t_order_$->{0..1}
+            table-strategy:
+              inline:
+                sharding-column: order_id
+                algorithm-expression: t_order_$->{order_id % 2}
+            key-generator-column-name: order_id
+          t_order_item:
+            actual-data-nodes: ds_$->{0..1}.t_order_item_$->{0..1}
+            table-strategy:
+              inline:
+                sharding-column: order_id
+                algorithm-expression: t_order_item_$->{order_id % 2}
+            key-generator-column-name: order_item_id
 
 # mybatis mapper xml 配置
 mybatis:
