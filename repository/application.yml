@@ -44,12 +44,3 @@ hystrix:
           thread:
             #断路器的超时时间需要大于ribbon的超时时间，不然不会触发重试
             timeoutInMilliseconds: 9000
-
-logging:
-  level:
-    root: INFO
-    org.springframework.cloud.sleuth: DEBUG
-    org.springframework.web: DEBUG
-    #com.lihy.view.user.controller: WARN
-    #com.lihy.view.user.mapper: DEBUG
-  #file: logs/spring-cloud-logging.log
