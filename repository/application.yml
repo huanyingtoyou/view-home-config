@@ -6,7 +6,9 @@ eureka:
       #defaultZone: http://lihy:520@eureka1:8088/eureka/,http://lihy:520@eureka2:8089/eureka/,http://lihy:520@eureka3:8090/eureka/
   instance:
     status-page-url: http://localhost:${server.port}/swagger-ui.html
-    #prefer-ip-address: true
+    #自定义微服务的instanceId
+    #instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+    prefer-ip-address: true
 
 #测试自动刷新的配置属性
 profile: lihy
@@ -47,6 +49,7 @@ logging:
   level:
     root: INFO
     org.springframework.cloud.sleuth: DEBUG
+    org.springframework.web: DEBUG
     #com.lihy.view.user.controller: WARN
     #com.lihy.view.user.mapper: DEBUG
   #file: logs/spring-cloud-logging.log
