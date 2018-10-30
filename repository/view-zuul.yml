@@ -5,8 +5,8 @@ zuul:
       serviceId: view-user-service
       path: /user-service/**
     file-upload-route:
-      serviceId: view-zuul-file-upload
-      path: /view-zuul/**
+      serviceId: view-photo-service
+      path: /photo-service/**
   #是否开启重试功能
   retryable: true
 #开启重试机制
